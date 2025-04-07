@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Deployment-capsule
+  name: deployment-capsule
 spec:
   replicas: 3
   selector:
