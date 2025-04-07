@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Deployment-capsule
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: capsule
+  template:
+    metadata:
+      labels:
+        app: capsule
+    spec:
+      containers:
+      - name: capsule1
+        image: bharathsunny3006/praticse:latest
+        ports:
+        - containerPort: 3015
+        env:
+          - name: MONGO_URI
+            value: mongodb://mongodb:27017/AFF-Docker
+          - name:  PORT
+            value: '3015'
+          - name: SESSION_SECRET
+            value: your-secret-key
+
+
+
+

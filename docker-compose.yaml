@@ -1,0 +1,22 @@
+
+services:
+  web:
+    image: praticse
+    container_name: capsule3
+    environment:
+
+      - MONGO_URI=mongodb://mongodb:27017/AFF-Docker
+    ports:
+      - '3015:3015'  
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data:/data/dbs
+ 
+
+
+      
