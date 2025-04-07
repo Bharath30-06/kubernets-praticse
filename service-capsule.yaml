@@ -5,7 +5,9 @@ metadata:
 spec:
   selector:
     app: capsule
-  type: ClusterIP  
+  type: NodePort
   ports:
-  - port: 47688
-    targetPort: 3015
+    - port: 47688
+      targetPort: 3015
+      nodePort: 30088   
+
